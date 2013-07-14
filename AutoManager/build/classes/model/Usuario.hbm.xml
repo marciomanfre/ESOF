@@ -1,0 +1,81 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 10/04/2013 09:44:34 by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+    <class name="model.Usuario" table="usuario" schema="public">
+        <id name="username" type="string">
+            <column name="username" length="100" />
+            <generator class="assigned" />
+        </id>
+        <property name="senha" type="string">
+            <column name="senha" length="100" />
+        </property>
+        <set name="trabalhos" inverse="true">
+            <key>
+                <column name="username" length="100" />
+            </key>
+            <one-to-many class="model.Trabalho" />
+        </set>
+        <set name="reuniaos" inverse="true">
+            <key>
+                <column name="username" length="100" />
+            </key>
+            <one-to-many class="model.Reuniao" />
+        </set>
+        <set name="contas" inverse="true">
+            <key>
+                <column name="username" length="100" />
+            </key>
+            <one-to-many class="model.Conta" />
+        </set>
+        <set name="outroagendas" inverse="true">
+            <key>
+                <column name="username" length="100" />
+            </key>
+            <one-to-many class="model.Outroagenda" />
+        </set>
+        <set name="outrofinanceiros" inverse="true">
+            <key>
+                <column name="username" length="100" />
+            </key>
+            <one-to-many class="model.Outrofinanceiro" />
+        </set>
+        <set name="seminarios" inverse="true">
+            <key>
+                <column name="username" length="100" />
+            </key>
+            <one-to-many class="model.Seminario" />
+        </set>
+        <set name="outroestudantes" inverse="true">
+            <key>
+                <column name="username" length="100" />
+            </key>
+            <one-to-many class="model.Outroestudante" />
+        </set>
+        <set name="depositos" inverse="true">
+            <key>
+                <column name="username" length="100" />
+            </key>
+            <one-to-many class="model.Deposito" />
+        </set>
+        <set name="aniversarios" inverse="true">
+            <key>
+                <column name="username" length="100" />
+            </key>
+            <one-to-many class="model.Aniversario" />
+        </set>
+        <set name="provas" inverse="true">
+            <key>
+                <column name="username" length="100" />
+            </key>
+            <one-to-many class="model.Prova" />
+        </set>
+        <set name="compras" inverse="true">
+            <key>
+                <column name="username" length="100" />
+            </key>
+            <one-to-many class="model.Compra" />
+        </set>
+    </class>
+</hibernate-mapping>
